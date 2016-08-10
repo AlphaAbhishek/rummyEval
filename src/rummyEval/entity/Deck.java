@@ -17,7 +17,7 @@ public class Deck {
 		cards = new ArrayList<>();
 		for(int i=0;i<n;i++)
 		{
-			Pack p1 = new Pack();
+			Pack p1 = new PackWithJoker();
 			cards.addAll(p1.getCards());
 		}
 	}
