@@ -8,7 +8,7 @@ public class Deck {
 	List<Card> cards;
 	
 	public Deck(){
-		Pack p1 = new Pack();
+		Pack p1 = new PackWithJoker();
 		cards= new ArrayList<>();
 		cards.addAll(p1.getCards());
 	}
