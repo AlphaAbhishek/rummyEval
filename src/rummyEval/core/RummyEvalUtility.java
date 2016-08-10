@@ -19,4 +19,10 @@ public class RummyEvalUtility {
 		//handle jokers
 		return false;
 	}
+	
+	public List<List<Card>> getPermutations(List<Card> cards)
+	{
+		// return all permutations
+		return null;
+	}
 }
