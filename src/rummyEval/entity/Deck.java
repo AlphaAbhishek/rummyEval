@@ -7,18 +7,19 @@ import java.util.List;
 public class Deck {
 	List<Card> cards;
 	
-	public Deck(){
-		Pack p1 = new PackWithJoker();
-		cards= new ArrayList<>();
-		cards.addAll(p1.getCards());
+	public Deck()
+	{
+		cards = new ArrayList<>();
+		Pack p = new PackWithJoker();
+		cards.addAll(p.getCards());
 	}
 	
-	public Deck(int n){
+	public Deck(List<Pack> packs)
+	{
 		cards = new ArrayList<>();
-		for(int i=0;i<n;i++)
+		for(Pack p : packs)
 		{
-			Pack p1 = new PackWithJoker();
-			cards.addAll(p1.getCards());
+			cards.addAll(p.getCards());
 		}
 	}
 	
@@ -26,15 +27,9 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 	
-	public void removeCard()
+	public String toString()
 	{
-		cards.remove(0);
+		return cards.toString();
 	}
-	
-	public Card getCard()
-	{
-		Card temp = cards.get(0);
-		removeCard();
-		return temp;
-	}
+
 }

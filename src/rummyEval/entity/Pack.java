@@ -7,12 +7,14 @@ public class Pack {
 
 	protected List<Card> cards;
 	
+	
 	public Pack(){
 		cards = new ArrayList<>();
-		for(Card.SUIT suit : Card.SUIT.values()){
-			for(Card.VALUE value : Card.VALUE.values()){
-				if(!suit.equals(Card.SUIT.JOKER) && !value.equals(Card.VALUE.JOKER))
-					cards.add(new Card(suit, value));
+		for(char c : Card.getSuits().toCharArray())
+		{
+			for(char t : Card.getFaceValues().toCharArray())
+			{
+				cards.add(new Card(""+c,""+t));
 			}
 		}
 	}
@@ -21,7 +23,5 @@ public class Pack {
 		return cards;
 	}
 
-	public void shuffle(){
-		Collections.shuffle(cards);
-	}
+	
 }

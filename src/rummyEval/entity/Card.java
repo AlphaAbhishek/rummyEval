@@ -2,45 +2,42 @@ package rummyEval.entity;
 
 import java.util.Comparator;
 
-public class Card {
+public class Card implements Comparable<Card> {
 	
-	public static enum VALUE {
-	    TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE, JOKER
-	}
+	private static String faceValues = "23456789TJQKA"; //Joker??
+	private static String suits = "CDHS";
 	
-	public static enum SUIT {
-	    SPADES, HEARTS, DIAMOND, CLUBS, JOKER
-	}
+	private String faceValue;
+	private String suit;
 	
-	private VALUE faceValue;
-	private SUIT suit;
-	
-	public static Comparator<Card> valueComparator = new Comparator<Card>() {
-	    public int compare(Card c1, Card c2) {
-	        return c2.getFaceValue().compareTo(c1.getFaceValue()); // use your logic
-	    }
-	};
-	
-	public static Comparator<Card> suitComparator = new Comparator<Card>() {
-	    public int compare(Card c1, Card c2) {
-	        return c2.getSuit().compareTo(c1.getSuit()); // use your logic
-	    }
-	};
-	
-	public Card (SUIT suit, VALUE faceValue){
+	public Card(String suit,String faceValue)
+	{
+		this.suit =suit;
 		this.faceValue = faceValue;
-		this.suit = suit;
+	}
+	
+	public boolean isSameSuit(Card c)
+	{
+		return this.suit.equals(c.suit);
+	}
+
+	public static String getFaceValues()
+	{
+		return faceValues;
+	}
+	
+	public static String getSuits()
+	{
+		return suits;
+	}
+	@Override
+	public int compareTo(Card a) {
+		return faceValues.indexOf(this.faceValue)-faceValues.indexOf(a.faceValue);
 	}
 	
 	public String toString(){
-		return this.suit.name() + " " + this.faceValue.name();
+		return this.suit +" "+ this.faceValue;
 	}
-
-	public VALUE getFaceValue() {
-		return faceValue;
-	}
-
-	public SUIT getSuit() {
-		return suit;
-	}
+	
+	
 }

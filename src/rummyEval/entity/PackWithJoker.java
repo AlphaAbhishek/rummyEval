@@ -1,6 +1,7 @@
 package rummyEval.entity;
 
 public class PackWithJoker extends Pack {
+	private Card jokerCard = new Card("JOKER","JOKER");
 	
 	public PackWithJoker() {
 		super();
@@ -14,7 +15,7 @@ public class PackWithJoker extends Pack {
 	
 	private void addJokers(int count){
 		for(int i = 0; i<count; i++){
-			cards.add(new Card(Card.SUIT.JOKER, Card.VALUE.JOKER));
+			cards.add(jokerCard);
 		}
 	}
 }
