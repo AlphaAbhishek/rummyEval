@@ -36,7 +36,7 @@ public class Card{
 	}
 	
 	public String getFaceValue(){
-		return this.getFaceValue();
+		return this.faceValue;
 	}
 	public static Comparator<Card> valueComparator = new Comparator<Card>() {
 	    public int compare(Card c1, Card c2) {
@@ -51,7 +51,7 @@ public class Card{
 	};
 	
 	public String toString(){
-		return this.suit +" "+ this.faceValue;
+		return this.suit + this.faceValue;
 	}
 	
 	
