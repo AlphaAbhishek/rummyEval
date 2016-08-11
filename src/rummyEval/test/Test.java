@@ -10,6 +10,6 @@ public class Test {
 	public static void main(String[] args) {
 		RummyHand r = new RummyHand("D6 C5 D7 H2 DT");
 		Card jokerCard = new Card("D","6");
-		System.out.println(EvaluatorUtility.getModifiedString(r,jokerCard));
+		System.out.println(EvaluatorUtility.getModifiedStrings(r,jokerCard));
 	}
 }

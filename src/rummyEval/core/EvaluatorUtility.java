@@ -28,7 +28,7 @@ public class EvaluatorUtility {
 	}
 	
 	
-	public static String getModifiedString(RummyHand r,Card joker)
+	public static List<String> getModifiedStrings(RummyHand r,Card joker)
 	{
 		//should give a string of sorted cards according to Suit. Separate Suits by space. 
 		//Represent jokers by x.
@@ -50,7 +50,13 @@ public class EvaluatorUtility {
 				outputString+=card.toString()+" ";
 			}
 		}
-		return outputString;
+		return debug(outputString);
+		
+	}
+	
+	private static List<String> debug(String str)
+	{
+		return null;
 	}
 
 	
