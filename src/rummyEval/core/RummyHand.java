@@ -18,4 +18,8 @@ public class RummyHand {
 			cards.add(card);
 		}
 	}
+	
+	public List<Card> getRummyHandCards() {
+		return cards;
+	}
 }
