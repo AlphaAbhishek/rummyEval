@@ -80,5 +80,11 @@ public class EvaluatorUtility {
 			return sequences.indexOf("" + o1) - sequences.indexOf("" + o2);
 		}
 	};
+	
+	public static List<String> getCombinations(String str,int n)
+	{
+		//generate all n size sublists.
+		return null;
+	}
 
 }
