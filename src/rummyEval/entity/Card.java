@@ -2,7 +2,7 @@ package rummyEval.entity;
 
 import java.util.Comparator;
 
-public class Card implements Comparable<Card> {
+public class Card{
 	
 	private static String faceValues = "23456789TJQKA"; //Joker??
 	private static String suits = "CDHS";
@@ -30,10 +30,25 @@ public class Card implements Comparable<Card> {
 	{
 		return suits;
 	}
-	@Override
-	public int compareTo(Card a) {
-		return faceValues.indexOf(this.faceValue)-faceValues.indexOf(a.faceValue);
+	
+	public String getSuit(){
+		return this.suit;
 	}
+	
+	public String getFaceValue(){
+		return this.getFaceValue();
+	}
+	public static Comparator<Card> valueComparator = new Comparator<Card>() {
+	    public int compare(Card c1, Card c2) {
+	        return faceValues.indexOf(c1.getFaceValue())-faceValues.indexOf(c2.getFaceValue()); // use your logic
+	    }
+	};
+	
+	public static Comparator<Card> suitComparator = new Comparator<Card>() {
+	    public int compare(Card c1, Card c2) {
+	    	return suits.indexOf(c1.getSuit())-suits.indexOf(c2.getSuit()); // use your logic
+	    }
+	};
 	
 	public String toString(){
 		return this.suit +" "+ this.faceValue;
