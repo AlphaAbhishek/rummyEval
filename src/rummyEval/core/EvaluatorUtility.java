@@ -56,7 +56,19 @@ public class EvaluatorUtility {
 	
 	private static List<String> debug(String str)
 	{
-		return null;
+		List<String> cards = new ArrayList<String>();
+		String xString="";
+		String valueString="";
+		String[] cardSubStrings = str.split("\\s+");
+		for(String card:cardSubStrings) {
+			if(card.equals("x")) {
+				xString+=card;
+			}
+			valueString+=card+"\t";
+		}
+		cards.add(xString);
+		cards.add(valueString);
+		return cards;
 	}
 
 	
