@@ -2,6 +2,8 @@ package rummyEval.core;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import java.util.Comparator;
 import java.util.List;
 
 import rummyEval.entity.Card;
@@ -60,4 +62,13 @@ public class EvaluatorUtility {
 		Collections.sort(cardList,Card.valueComparator);
 		return cardList;
 	}
+	
+	public static Comparator<Character>seqComparator = new Comparator<Character>() {
+
+		@Override
+		public int compare(Character o1, Character o2) {
+			return sequences.indexOf(""+o1)-sequences.indexOf(""+o2);
+		}
+	};
+	
 }
