@@ -18,7 +18,14 @@ public class EvaluatorUtility {
 	
 	public boolean isASet(String s)
 	{
-		//I will send you a String of above characters and x-es. You have to check for validity. Ex of valid set - 22x,222x,4xx4
+		//I will send you a String of above characters and x-es. You have to check for validity. Ex of valid set - 22x,222x,4xx3
 		return false;
+	}
+	
+	public String getModifiedString(RummyHand r,Card joker)
+	{
+		//should give a string of sorted cards according to Suit. Separate Suits by space. Represent jokers by x.
+		//Ex - C2 D4 D5 H7 JOKER H8 CJ => "X 2J 45 78"
+		return null;
 	}
 }
